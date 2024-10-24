@@ -1,0 +1,124 @@
+.grid-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+  gap: 10px;
+  box-sizing: border-box;
+  
+}
+
+.grid-child{
+  position: relative;
+  padding: 5px;
+  height: 284px;
+  transition: transform 0.5s;
+}
+.grid-items{
+  height: 100%;
+  width: 100%;
+} 
+
+.image-container{
+  width: 273px;
+  height: 185px;
+}
+
+.image-container > img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border: none;
+  border-radius: 10px;
+}
+.item-footer {
+  font-size: 18px;
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 11px;
+}
+.description{
+  width: 250px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: rgb(116, 116, 117);
+}
+.hotelName{color: white;}
+.star-rating{
+  display: flex;
+  align-items: center;
+}
+.price {
+  margin-left: 10px;
+
+}
+.grid-child:hover {
+  transform: scale(0.90);
+}
+
+.toast{
+  max-width: 200px;
+  border: 1px solid gray;
+  display: flex;
+flex-direction: column;
+  animation: slide-in 0.4s ease-in-out forwards;
+}
+
+.toast-msg {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+}
+
+
+@keyframes slide-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+.info-icon,
+.error-icon,
+.warning-icon,
+.success-icon{
+  width: 20px;
+  height: 20px;
+}
+
+
+.toast-progress {
+  /* position: absolute;
+  bottom: 0;
+  left: 0; */
+  width: 100%;
+  height: 4px;
+  background-color: rgba(0 , 0 , 0,0.1);
+}
+.toast-progress-bar{
+  height: 100%;
+  animation: progress-bar 4s linear forwards;
+}
+.success{
+  background-color: green;
+}
+.warning{
+  background-color:rgb(237, 226, 11);
+}
+.error{
+  background-color:rgb(220, 24, 24);
+}
+.info{
+  background-color:rgb(24, 89, 220);
+}
+@keyframes progress-bar {
+  0%{
+    width: 100%;
+  } 
+  100%{
+    width: 0%;
+  }
+}
